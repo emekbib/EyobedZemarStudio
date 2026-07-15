@@ -47,21 +47,15 @@ const PLANS = [
 
 const TESTIMONIALS = [
   {
-    name: 'Sarah M.',
-    role: 'Guitar Student',
-    text: 'Zemar completely transformed my playing. I went from struggling with basic chords to performing at open mics in just six months. The patience and expertise is unmatched.',
+    name: 'Misgana W.',
+    role: 'Guitar Student, 2024–2025',
+    text: 'Taking guitar lessons with Eyobed has been a fantastic experience. He is extremely knowledgeable and talented and his teaching style is both engaging and effective. Each lesson is well structured and he always provides helpful tips and techniques to improve my playing. He makes sure I understand each lesson thoroughly and provides personalized feedback and adjusts the lesson to fit my learning pace perfectly. I have seen significant improvement in my playing and highly recommend Eyobed to anyone serious about learning guitar.',
     rating: 5,
   },
   {
-    name: 'James K.',
-    role: 'Recording Artist',
-    text: 'Recorded my first EP here and the quality blew me away. The production guidance helped me find a sound I didn\'t even know I was looking for.',
-    rating: 5,
-  },
-  {
-    name: 'Lena T.',
-    role: 'Guitar Student',
-    text: 'My kids love their lessons here. Fun, engaging, and actually educational. They\'ve progressed more in 3 months than a year of online tutorials.',
+    name: 'Abelizer A.',
+    role: 'Guitar Student, 2024',
+    text: 'Eyobed is very knowledgeable and reliable, he\u2019s doing an amazing job teaching me how to play guitar, his dedication and patience has been outstanding.',
     rating: 5,
   },
 ];
@@ -153,7 +147,7 @@ export default function Lessons() {
           <h3 className="font-manrope font-bold text-2xl md:text-3xl text-dark text-center mb-12">
             What students & clients say.
           </h3>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {TESTIMONIALS.map((t, i) => (
               <div
                 key={i}
