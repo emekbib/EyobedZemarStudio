@@ -1,29 +1,40 @@
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Music, Mic, Sliders, Guitar, GraduationCap } from 'lucide-react';
 
 const SERVICES = [
   {
     num: '01',
-    title: 'Music Production',
-    desc: 'From initial concept to polished final track. We handle arrangement, beat-making, recording, and creative direction across genres.',
-    tags: ['Arrangement', 'Beat Making', 'Creative Direction'],
+    title: 'Guitar Lessons',
+    icon: GraduationCap,
+    desc: 'Eyobed Thomas teaches guitar lessons for interested musicians at any stage or age. Beginning, intermediate, or advanced lessons available — in-person or virtually.',
+    tags: ['All Ages & Levels', 'In-Person or Virtual', 'Personalized Instruction'],
   },
   {
     num: '02',
-    title: 'Recording & Mixing',
-    desc: 'Studio-grade recording sessions with professional mixing and mastering. Your tracks get the clarity and depth they deserve.',
-    tags: ['Recording', 'Mixing', 'Mastering'],
+    title: 'Music Production',
+    icon: Music,
+    desc: 'From initial concept to polished final track. Full production including arrangement, beat-making, recording, and creative direction across genres.',
+    tags: ['Arrangement', 'Recording', 'Creative Direction'],
   },
   {
     num: '03',
-    title: 'Guitar Lessons',
-    desc: 'Personalized one-on-one guitar instruction for all skill levels. Learn technique, theory, and the songs you love.',
-    tags: ['Beginner to Advanced', 'Acoustic & Electric', 'Music Theory'],
+    title: 'Mixing and Mastering',
+    icon: Sliders,
+    desc: 'Professional mixing and mastering to give your tracks clarity, depth, and radio-ready polish.',
+    tags: ['Mixing', 'Mastering', 'Final Polish'],
   },
   {
     num: '04',
-    title: 'Songwriting Support',
-    desc: 'Collaborative songwriting sessions to help you find your voice. Structure, lyrics, melody — we work through it together.',
-    tags: ['Lyrics', 'Melody', 'Song Structure'],
+    title: 'Vocal Recording',
+    icon: Mic,
+    desc: 'Studio-grade vocal recording sessions in a comfortable, professional environment.',
+    tags: ['Studio Recording', 'Vocal Production'],
+  },
+  {
+    num: '05',
+    title: 'Live Guitar Recording',
+    icon: Guitar,
+    desc: 'Live guitar recording for artists — acoustic or electric, solo or layered. Professional capture of your performance.',
+    tags: ['Acoustic & Electric', 'Live Performance'],
   },
 ];
 
@@ -58,9 +69,14 @@ export default function Services() {
               style={{ animationDelay: `${i * 0.1}s` }}
             >
               <div className="flex items-start justify-between mb-6">
-                <span className="font-manrope font-bold text-sm text-primary/40">
-                  {service.num}
-                </span>
+                <div className="flex items-center gap-3">
+                  <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-all">
+                    <service.icon className="w-5 h-5 text-primary group-hover:text-dark transition-colors" />
+                  </div>
+                  <span className="font-manrope font-bold text-sm text-primary/40">
+                    {service.num}
+                  </span>
+                </div>
                 <div className="w-10 h-10 rounded-full bg-dark/5 flex items-center justify-center group-hover:bg-primary transition-all">
                   <ArrowUpRight className="w-5 h-5 text-dark/40 group-hover:text-dark group-hover:rotate-45 transition-all" />
                 </div>

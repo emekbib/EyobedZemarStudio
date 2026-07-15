@@ -1,49 +1,4 @@
-import { Check, Music, Star } from 'lucide-react';
-
-const PLANS = [
-  {
-    name: 'Starter',
-    price: '$30',
-    period: '/lesson',
-    desc: 'Perfect for beginners just starting their guitar journey.',
-    features: [
-      '30-minute weekly lesson',
-      'Basic chords & strumming',
-      'Simple song tutorials',
-      'Practice materials included',
-    ],
-    highlight: false,
-  },
-  {
-    name: 'Standard',
-    price: '$50',
-    period: '/lesson',
-    desc: 'For intermediate players ready to level up their skills.',
-    features: [
-      '60-minute weekly lesson',
-      'Technique & theory deep-dive',
-      'Genre-specific training',
-      'Personalized practice plan',
-      'Recording session feedback',
-    ],
-    highlight: true,
-  },
-  {
-    name: 'Premium',
-    price: '$80',
-    period: '/lesson',
-    desc: 'Advanced instruction with production and performance focus.',
-    features: [
-      '90-minute weekly lesson',
-      'Advanced technique mastery',
-      'Songwriting & composition',
-      'Studio recording time included',
-      'Performance preparation',
-      'Flexible scheduling',
-    ],
-    highlight: false,
-  },
-];
+import { Check, Music, Star, Clock, Users, MapPin, Video } from 'lucide-react';
 
 const TESTIMONIALS = [
   {
@@ -58,6 +13,12 @@ const TESTIMONIALS = [
     text: 'Eyobed is very knowledgeable and reliable, he\u2019s doing an amazing job teaching me how to play guitar, his dedication and patience has been outstanding.',
     rating: 5,
   },
+];
+
+const FEATURES = [
+  { icon: Users, text: 'All ages & skill levels welcome' },
+  { icon: Video, text: 'In-person or virtual lessons' },
+  { icon: MapPin, text: 'Personalized to your pace & goals' },
 ];
 
 export default function Lessons() {
@@ -78,74 +39,50 @@ export default function Lessons() {
             <span className="text-primary">purpose.</span>
           </h2>
           <p className="font-manrope text-dark/50 max-w-xl mx-auto mt-6 leading-relaxed">
-            One-on-one guitar instruction for all ages and skill levels.
-            Choose the plan that fits your goals.
+            Eyobed Thomas is available to teach guitar lessons for interested
+            musicians at any stage or age. Beginning, intermediate, or advanced
+            lessons — in-person or virtually.
           </p>
         </div>
 
-        {/* Pricing cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-20">
-          {PLANS.map((plan, i) => (
-            <div
-              key={i}
-              className={`relative rounded-3xl p-8 transition-all duration-500 animate-fade-up ${
-                plan.highlight
-                  ? 'bg-dark text-cream shadow-[0_20px_60px_rgba(244,153,87,0.25)] md:-translate-y-4'
-                  : 'bg-white border border-dark/5 hover:shadow-[0_20px_60px_rgba(0,0,0,0.06)]'
-              }`}
-              style={{ animationDelay: `${i * 0.1}s` }}
-            >
-              {plan.highlight && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-dark font-manrope text-xs font-bold px-4 py-1.5 rounded-full">
-                  Most Popular
-                </span>
-              )}
-              <h3 className={`font-manrope font-bold text-xl mb-2 ${plan.highlight ? 'text-cream' : 'text-dark'}`}>
-                {plan.name}
-              </h3>
-              <p className={`font-manrope text-sm mb-6 ${plan.highlight ? 'text-cream/60' : 'text-dark/50'}`}>
-                {plan.desc}
-              </p>
-              <div className="flex items-baseline gap-1 mb-6">
-                <span className={`font-manrope font-bold text-4xl ${plan.highlight ? 'text-primary' : 'text-dark'}`}>
-                  {plan.price}
-                </span>
-                <span className={`font-manrope text-sm ${plan.highlight ? 'text-cream/50' : 'text-dark/40'}`}>
-                  {plan.period}
-                </span>
-              </div>
-              <ul className="space-y-3 mb-8">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3">
-                    <div className={`mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ${
-                      plan.highlight ? 'bg-primary/20' : 'bg-primary/10'
-                    }`}>
-                      <Check className="w-3 h-3 text-primary" />
-                    </div>
-                    <span className={`font-manrope text-sm ${plan.highlight ? 'text-cream/80' : 'text-dark/70'}`}>
-                      {feature}
-                    </span>
-                  </li>
+        {/* Pricing */}
+        <div className="max-w-2xl mx-auto mb-20 animate-fade-up">
+          <div className="bg-dark text-cream rounded-3xl p-8 md:p-10 text-center relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[80px]" />
+            <div className="relative z-10">
+              <div className="flex flex-wrap justify-center gap-3 mb-8">
+                {FEATURES.map((f) => (
+                  <div
+                    key={f.text}
+                    className="flex items-center gap-2 bg-cream/5 border border-cream/10 rounded-full px-4 py-2"
+                  >
+                    <f.icon className="w-4 h-4 text-primary" />
+                    <span className="font-manrope text-xs text-cream/70">{f.text}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
+
+              <div className="flex items-baseline justify-center gap-2 mb-2">
+                <span className="font-manrope font-bold text-6xl text-primary">$45</span>
+                <span className="font-manrope text-cream/50 text-lg">/ 50-minute lesson</span>
+              </div>
+              <p className="font-manrope text-cream/40 text-sm mb-8">
+                Submit an inquiry for package deals and group rates.
+              </p>
               <a
                 href="#contact"
-                className={`block text-center font-manrope font-bold py-3.5 rounded-full transition-all ${
-                  plan.highlight
-                    ? 'bg-primary text-dark hover:bg-primary/90'
-                    : 'bg-dark text-cream hover:bg-primary hover:text-dark'
-                }`}
+                className="inline-flex bg-primary hover:bg-primary/90 text-dark font-manrope font-bold px-8 py-4 rounded-full transition-all"
               >
-                Get Started
+                Submit Inquiry
               </a>
             </div>
-          ))}
+          </div>
         </div>
 
         {/* Testimonials */}
         <div className="animate-fade-up">
           <h3 className="font-manrope font-bold text-2xl md:text-3xl text-dark text-center mb-12">
-            What students & clients say.
+            What students say.
           </h3>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {TESTIMONIALS.map((t, i) => (
