@@ -167,23 +167,6 @@ export default function Contact() {
               </button>
             </div>
 
-            {/* Contact details */}
-            <div className="mt-8 space-y-3">
-              <div className="flex items-center gap-3 text-cream/60">
-                <span className="font-manrope text-sm">eyobedtho@gmail.com</span>
-              </div>
-              <div className="flex items-center gap-3 text-cream/60">
-                <span className="font-manrope text-sm">Eyobed Thomas</span>
-              </div>
-            </div>
-
-            <div className="mt-8 bg-cream/5 border border-cream/10 rounded-2xl p-5">
-              <p className="font-manrope text-xs text-cream/50 leading-relaxed">
-                {formType === 'guitar_lesson'
-                  ? 'Eyobed will reach out before sending a link to schedule lessons.'
-                  : 'Eyobed will follow up with you for more information and pricing/package deals.'}
-              </p>
-            </div>
           </div>
 
           {/* Form */}
