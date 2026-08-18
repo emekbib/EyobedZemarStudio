@@ -1,4 +1,4 @@
-import { Instagram, Youtube, Mail, Phone, ArrowUp } from 'lucide-react';
+import { Instagram, Youtube, Mail, Phone, ArrowUp, Music } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -7,10 +7,15 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="md:col-span-2">
-            <h3 className="font-manrope font-bold text-2xl text-dark tracking-tight">
-              ZEMAR<span className="text-primary">.</span>STUDIO
-            </h3>
-            <p className="font-manrope text-dark/50 mt-4 max-w-sm leading-relaxed">
+            <div className="flex items-center gap-2.5 mb-4">
+              <div className="w-10 h-10 rounded-xl bg-dark flex items-center justify-center flex-shrink-0">
+                <Music className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="font-manrope font-bold text-3xl text-dark tracking-tight">
+                ZEMAR<span className="text-primary">.</span>STUDIO
+              </h3>
+            </div>
+            <p className="font-manrope text-dark/50 max-w-sm leading-relaxed">
               Music production and guitar instruction. Helping artists and
               students find their sound since 2014.
             </p>

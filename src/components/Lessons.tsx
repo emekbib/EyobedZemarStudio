@@ -1,4 +1,4 @@
-import { Check, Music, Star, Clock, Users, MapPin, Video } from 'lucide-react';
+import { Music, Star, ArrowRight } from 'lucide-react';
 
 const TESTIMONIALS = [
   {
@@ -10,15 +10,27 @@ const TESTIMONIALS = [
   {
     name: 'Abelizer A.',
     role: 'Guitar Student, 2024',
-    text: 'Eyobed is very knowledgeable and reliable, he\u2019s doing an amazing job teaching me how to play guitar, his dedication and patience has been outstanding.',
+    text: "Eyobed is very knowledgeable and reliable, he's doing an amazing job teaching me how to play guitar, his dedication and patience has been outstanding.",
     rating: 5,
   },
 ];
 
-const FEATURES = [
-  { icon: Users, text: 'All ages & skill levels welcome' },
-  { icon: Video, text: 'In-person or virtual lessons' },
-  { icon: MapPin, text: 'Personalized to your pace & goals' },
+const SKILL_LEVELS = [
+  {
+    num: '01',
+    level: 'Beginner',
+    tags: ['Chords', 'Rhythm', 'Technique', 'Songs', 'Fundamentals'],
+  },
+  {
+    num: '02',
+    level: 'Intermediate',
+    tags: ['Fretboard', 'Theory', 'Improvisation', 'Timing', 'Lead Guitar'],
+  },
+  {
+    num: '03',
+    level: 'Advanced',
+    tags: ['Harmony', 'Improvisation', 'Tone', 'Phrasing', 'Professional Musicianship'],
+  },
 ];
 
 export default function Lessons() {
@@ -39,43 +51,64 @@ export default function Lessons() {
             <span className="text-primary">purpose.</span>
           </h2>
           <p className="font-manrope text-dark/50 max-w-xl mx-auto mt-6 leading-relaxed">
-            Eyobed Thomas is available to teach guitar lessons for interested
-            musicians at any stage or age. Beginning, intermediate, or advanced
-            lessons — in-person or virtually.
+            Personalized guitar lessons designed to help you become a confident,
+            musical player — not just memorize chords and exercises.
+          </p>
+          <p className="font-manrope text-dark/50 max-w-xl mx-auto mt-4 leading-relaxed">
+            Whether you're picking up the guitar for the first time or looking
+            to improve your technique, theory, improvisation, rhythm or lead
+            playing, lessons are built around your goals and the music you want
+            to play.
           </p>
         </div>
 
-        {/* Pricing */}
-        <div className="max-w-2xl mx-auto mb-20 animate-fade-up">
-          <div className="bg-dark text-cream rounded-3xl p-8 md:p-10 text-center relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[80px]" />
-            <div className="relative z-10">
-              <div className="flex flex-wrap justify-center gap-3 mb-8">
-                {FEATURES.map((f) => (
-                  <div
-                    key={f.text}
-                    className="flex items-center gap-2 bg-cream/5 border border-cream/10 rounded-full px-4 py-2"
+        {/* Skill Level Cards */}
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
+          {SKILL_LEVELS.map((skill, i) => (
+            <div
+              key={skill.level}
+              className="group bg-white border border-dark/5 rounded-3xl p-8 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] hover:border-primary/20 transition-all duration-500 animate-fade-up"
+              style={{ animationDelay: `${i * 0.1}s` }}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-all">
+                  <span className="font-manrope font-bold text-sm text-primary group-hover:text-dark transition-colors">
+                    {skill.num}
+                  </span>
+                </div>
+                <h3 className="font-manrope font-bold text-2xl text-dark">
+                  {skill.level}
+                </h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {skill.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="font-manrope text-xs font-medium text-dark/50 bg-warm-gray/50 rounded-full px-3 py-1.5"
                   >
-                    <f.icon className="w-4 h-4 text-primary" />
-                    <span className="font-manrope text-xs text-cream/70">{f.text}</span>
-                  </div>
+                    {tag}
+                  </span>
                 ))}
               </div>
-
-              <div className="flex items-baseline justify-center gap-2 mb-2">
-                <span className="font-manrope font-bold text-6xl text-primary">$45</span>
-                <span className="font-manrope text-cream/50 text-lg">/ 50-minute lesson</span>
-              </div>
-              <p className="font-manrope text-cream/40 text-sm mb-8">
-                Submit an inquiry for package deals and group rates.
-              </p>
-              <a
-                href="#contact"
-                className="inline-flex bg-primary hover:bg-primary/90 text-dark font-manrope font-bold px-8 py-4 rounded-full transition-all"
-              >
-                Submit Inquiry
-              </a>
             </div>
+          ))}
+        </div>
+
+        {/* In-Person & Online + CTA */}
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-6 py-3 mb-6">
+            <span className="font-manrope font-bold text-primary text-sm">
+              In-Person & Online Lessons Available
+            </span>
+          </div>
+          <div>
+            <a
+              href="#contact"
+              className="inline-flex bg-dark text-cream font-manrope font-bold px-8 py-4 rounded-full hover:bg-primary hover:text-dark transition-all items-center gap-2 group"
+            >
+              Book a Guitar Lesson
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
           </div>
         </div>
 

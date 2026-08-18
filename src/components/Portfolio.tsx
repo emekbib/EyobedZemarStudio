@@ -1,10 +1,19 @@
 import { useState } from 'react';
 import { Play, ExternalLink, Youtube, Instagram, Music2 } from 'lucide-react';
 
-type Category = 'production' | 'guitar';
+type Category = 'production' | 'recording' | 'guitar';
+
+interface Project {
+  artist: string;
+  title: string;
+  id: string;
+  categories: Category[];
+  tags: string[];
+  album?: boolean;
+}
 
 const YOHANNES_ALBUM = [
-  { title: 'Geremegn Madanih (Live)', id: 'WnSLlCEep5o' },
+  { title: 'Geremegn Madani (Live)', id: 'WnSLlCEep5o' },
   { title: 'Semh (Live)', id: 'eDHi46GJwBk' },
   { title: 'Ayalehu (Live)', id: 'iVEozldSZOQ' },
   { title: "Wa'a (Live)", id: 'hRBaMmeMfas' },
@@ -13,39 +22,44 @@ const YOHANNES_ALBUM = [
   { title: 'Badis Zimare (Live)', id: '3cy1vyocAxo' },
 ];
 
-const PRODUCTION_PROJECTS = [
-  { artist: 'Yohannes Girma', title: 'Geremegn Madanih — Live Album', id: 'WnSLlCEep5o', album: true },
-  { artist: 'Kenean Abiy', title: 'Addis Misgana', id: 'd6jeQlMtXLE' },
-  { artist: 'Hasset Zel', title: 'You Care', id: 'd8TPvLBqyMg' },
-  { artist: 'Natnael Woldab', title: 'Eyayehu', id: 'KDilWGEupE4' },
-  { artist: 'Samuel Negussie', title: 'Tewedengaleh', id: 'MBXndB-9rUo' },
-];
-
-const GUITAR_PROJECTS = [
-  { artist: 'Ebba Daniel', title: 'Yehagera Lij', id: 'a4pSdsYNSAE' },
-  { artist: 'Ebba Daniel', title: 'Marken', id: 'HLNKyPkIFS8' },
-  { artist: 'Addisu Worku', title: 'Demun Lene Cover — Live Guitar Cover', id: 'DrR-Nk9I550' },
-  { artist: 'Azeb Hailu', title: 'Yihe New — Live Guitar Cover', id: '3SUf8_y0MBE' },
+const PROJECTS: Project[] = [
+  { artist: 'Yohannes Girma', title: 'Geremegn Madani — Live Album', id: 'WnSLlCEep5o', categories: ['production'], tags: ['Production', 'Arrangement', 'Guitar'], album: true },
+  { artist: 'Kenean Abiy', title: 'Addis Misgana', id: 'd6jeQlMtXLE', categories: ['production', 'recording'], tags: ['Music Production', 'Guitar', 'Recording'] },
+  { artist: 'Hasset Zel', title: 'You Care', id: 'd8TPvLBqyMg', categories: ['production', 'recording'], tags: ['Music Production', 'Guitar', 'Recording'] },
+  { artist: 'Natnael Woldab', title: 'Eyayehu', id: 'KDilWGEupE4', categories: ['production'], tags: ['Music Production', 'Guitar'] },
+  { artist: 'Samuel Negussie', title: 'Tewedengaleh', id: 'MBXndB-9rUo', categories: ['production'], tags: ['Music Production', 'Guitar'] },
+  { artist: 'Guitar Performance', title: 'Yehagere Lij', id: 'a4pSdsYNSAE', categories: ['guitar'], tags: ['Guitar Performance'] },
+  { artist: 'Guitar Performance', title: 'Marken', id: 'HLNKyPkIFS8', categories: ['guitar'], tags: ['Guitar Performance'] },
+  { artist: 'Guitar Performance', title: 'Etsenalew', id: 'hIt7WdqYmSc', categories: ['guitar'], tags: ['Guitar Performance'] },
+  { artist: 'Guitar Performance', title: 'Milew Misgana New', id: '3tVYn8a_l9U', categories: ['guitar'], tags: ['Guitar Performance'] },
+  { artist: 'Guitar Performance', title: 'Demun Lene', id: 'DrR-Nk9I550', categories: ['guitar'], tags: ['Guitar Performance'] },
+  { artist: 'Guitar Performance', title: 'Yihe New', id: '3SUf8_y0MBE', categories: ['guitar'], tags: ['Guitar Performance'] },
 ];
 
 const SOCIAL_LINKS = [
   { label: 'Zemar Guitar — YouTube', url: 'https://www.youtube.com/@zemarguitaroffficial', icon: Youtube },
   { label: 'Eyobed Thomas — Instagram', url: 'https://www.instagram.com/obedtho/', icon: Instagram },
-  { label: 'Eyobed Thomas — TikTok', url: 'https://www.tiktok.com/@obedtho?is_from_webapp=1&sender_device=pc', icon: Music2 },
+  { label: 'Eyobed Thomas \u2014 TikTok', url: 'https://www.tiktok.com/@obedtho?is_from_webapp=1&sender_device=pc', icon: Music2 },
 ];
 
-function VideoCard({ artist, title, id, album }: { artist: string; title: string; id: string; album?: boolean }) {
+const CATEGORY_LABELS: Record<Category, string> = {
+  production: 'Music Production',
+  recording: 'Recording',
+  guitar: 'Guitar Performance',
+};
+
+function VideoCard({ project }: { project: Project }) {
   return (
     <a
-      href={`https://www.youtube.com/watch?v=${id}`}
+      href={`https://www.youtube.com/watch?v=${project.id}`}
       target="_blank"
       rel="noopener noreferrer"
       className="group bg-cream rounded-2xl overflow-hidden border border-dark/5 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] hover:border-primary/20 transition-all duration-500"
     >
       <div className="relative aspect-video overflow-hidden bg-dark">
         <img
-          src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`}
-          alt={title}
+          src={`https://img.youtube.com/vi/${project.id}/hqdefault.jpg`}
+          alt={project.title}
           className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
         />
         <div className="absolute inset-0 flex items-center justify-center bg-dark/30 group-hover:bg-dark/20 transition-all">
@@ -53,15 +67,25 @@ function VideoCard({ artist, title, id, album }: { artist: string; title: string
             <Play className="w-6 h-6 text-dark fill-dark ml-1" />
           </div>
         </div>
-        {album && (
+        {project.album && (
           <span className="absolute top-3 left-3 bg-primary text-dark rounded-full px-3 py-1.5 font-manrope text-xs font-bold">
             Live Album
           </span>
         )}
       </div>
       <div className="p-5">
-        <p className="font-manrope text-xs font-medium text-primary mb-1">{artist}</p>
-        <h3 className="font-manrope font-bold text-base text-dark leading-snug">{title}</h3>
+        <p className="font-manrope text-xs font-medium text-primary mb-1">{project.artist}</p>
+        <h3 className="font-manrope font-bold text-base text-dark leading-snug mb-3">{project.title}</h3>
+        <div className="flex flex-wrap gap-1.5">
+          {project.tags.map((tag) => (
+            <span
+              key={tag}
+              className="font-manrope text-xs font-medium text-dark/50 bg-warm-gray/50 rounded-full px-2.5 py-1"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
     </a>
   );
@@ -71,7 +95,7 @@ export default function Portfolio() {
   const [category, setCategory] = useState<Category>('production');
   const [albumOpen, setAlbumOpen] = useState(false);
 
-  const projects = category === 'production' ? PRODUCTION_PROJECTS : GUITAR_PROJECTS;
+  const filteredProjects = PROJECTS.filter((p) => p.categories.includes(category));
 
   return (
     <section id="portfolio" className="py-24 md:py-32 bg-warm-gray/30 relative overflow-hidden">
@@ -103,7 +127,7 @@ export default function Portfolio() {
                 </div>
                 <div>
                   <p className="font-manrope text-xs text-primary tracking-wide uppercase mb-1">Featured Production</p>
-                  <h3 className="font-manrope font-bold text-xl md:text-2xl">Yohannes Girma — "Geremegn Madanih" Live Album</h3>
+                  <h3 className="font-manrope font-bold text-xl md:text-2xl">Yohannes Girma — "Geremegn Madani" Live Album</h3>
                 </div>
               </div>
               <span className="font-manrope text-sm text-cream/50 hidden sm:block">
@@ -146,42 +170,30 @@ export default function Portfolio() {
 
         {/* Category toggle */}
         <div className="flex justify-center gap-3 mb-10 animate-fade-up">
-          <button
-            onClick={() => setCategory('production')}
-            className={`font-manrope font-bold text-sm px-6 py-3 rounded-full transition-all ${
-              category === 'production'
-                ? 'bg-dark text-cream'
-                : 'bg-white text-dark/60 border border-dark/10 hover:border-primary/30'
-            }`}
-          >
-            Music Production
-          </button>
-          <button
-            onClick={() => setCategory('guitar')}
-            className={`font-manrope font-bold text-sm px-6 py-3 rounded-full transition-all ${
-              category === 'guitar'
-                ? 'bg-dark text-cream'
-                : 'bg-white text-dark/60 border border-dark/10 hover:border-primary/30'
-            }`}
-          >
-            Live Guitar Recording
-          </button>
+          {(Object.keys(CATEGORY_LABELS) as Category[]).map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setCategory(cat)}
+              className={`font-manrope font-bold text-sm px-6 py-3 rounded-full transition-all ${
+                category === cat
+                  ? 'bg-dark text-cream'
+                  : 'bg-white text-dark/60 border border-dark/10 hover:border-primary/30'
+              }`}
+            >
+              {CATEGORY_LABELS[cat]}
+            </button>
+          ))}
         </div>
 
         {/* Projects grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, i) => (
+          {filteredProjects.map((project, i) => (
             <div
               key={project.id}
               className="animate-fade-up"
               style={{ animationDelay: `${i * 0.1}s` }}
             >
-              <VideoCard
-                artist={project.artist}
-                title={project.title}
-                id={project.id}
-                album={project.album}
-              />
+              <VideoCard project={project} />
             </div>
           ))}
         </div>

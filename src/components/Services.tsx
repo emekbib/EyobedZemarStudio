@@ -1,40 +1,33 @@
-import { ArrowUpRight, Music, Mic, Sliders, Guitar, GraduationCap } from 'lucide-react';
+import { ArrowUpRight, Music, Guitar, Mic, Sliders } from 'lucide-react';
 
 const SERVICES = [
   {
     num: '01',
-    title: 'Guitar Lessons',
-    icon: GraduationCap,
-    desc: 'Eyobed Thomas teaches guitar lessons for interested musicians at any stage or age. Beginning, intermediate, or advanced lessons available — in-person or virtually.',
-    tags: ['All Ages & Levels', 'In-Person or Virtual', 'Personalized Instruction'],
+    title: 'Music Production',
+    icon: Music,
+    desc: 'Turn your musical idea into a complete record. From arrangement and instrumentation to recording and creative direction, we\u2019ll help shape your song from concept to final production.',
+    tags: ['Production', 'Arrangement', 'Recording', 'Creative Direction'],
   },
   {
     num: '02',
-    title: 'Music Production',
-    icon: Music,
-    desc: 'From initial concept to polished final track. Full production including arrangement, beat-making, recording, and creative direction across genres.',
-    tags: ['Arrangement', 'Recording', 'Creative Direction'],
+    title: 'Guitar Lessons',
+    icon: Guitar,
+    desc: 'Personalized guitar instruction designed around your goals and musical interests. Beginner, intermediate and advanced lessons are available in-person or online.',
+    tags: ['Electric', 'Acoustic', 'Music Theory', 'Technique'],
   },
   {
     num: '03',
-    title: 'Mixing and Mastering',
-    icon: Sliders,
-    desc: 'Professional mixing and mastering to give your tracks clarity, depth, and radio-ready polish.',
-    tags: ['Mixing', 'Mastering', 'Final Polish'],
+    title: 'Recording',
+    icon: Mic,
+    desc: 'Professional recording for vocals, guitars and other instruments in a comfortable creative studio environment.',
+    tags: ['Vocals', 'Instruments', 'Overdubs', 'Session Guitar'],
   },
   {
     num: '04',
-    title: 'Vocal Recording',
-    icon: Mic,
-    desc: 'Studio-grade vocal recording sessions in a comfortable, professional environment.',
-    tags: ['Studio Recording', 'Vocal Production'],
-  },
-  {
-    num: '05',
-    title: 'Live Guitar Recording',
-    icon: Guitar,
-    desc: 'Live guitar recording for artists — acoustic or electric, solo or layered. Professional capture of your performance.',
-    tags: ['Acoustic & Electric', 'Live Performance'],
+    title: 'Mixing',
+    icon: Sliders,
+    desc: 'Professional mixing that brings clarity, balance, depth and energy to your music while preserving the character of your performance.',
+    tags: ['Mixing', 'Editing', 'Vocal Processing', 'Final Mix'],
   },
 ];
 

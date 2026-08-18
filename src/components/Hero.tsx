@@ -1,4 +1,4 @@
-import { ArrowDown, Play, Music, Video } from 'lucide-react';
+import { ArrowDown, ArrowRight, Music, Video } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -44,41 +44,43 @@ export default function Hero() {
             </h1>
 
             <p className="font-manrope text-lg text-dark/60 mt-8 max-w-xl leading-relaxed">
-              Zemar Studio is a creative music production house and guitar teaching
-              studio. We produce, record, and educate — helping artists find their
-              voice and players find their hands.
+              Zemar Studio is a creative music production and guitar education
+              studio helping artists turn ideas into finished music. From
+              production and arrangement to recording and mixing, we bring your
+              musical vision to life — while helping guitarists develop their
+              sound and musicianship.
             </p>
 
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-4 mt-10">
               <a
-                href="#portfolio"
+                href="#contact"
                 className="group bg-dark text-cream font-manrope font-bold px-7 py-4 rounded-full flex items-center gap-2 hover:bg-primary hover:text-dark transition-all"
               >
-                <Play className="w-4 h-4 fill-cream group-hover:fill-dark transition-colors" />
-                View Our Work
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                Start Your Project
               </a>
               <a
                 href="#lessons"
                 className="group font-manrope font-bold text-dark px-7 py-4 rounded-full border-2 border-dark/15 hover:border-primary hover:text-primary transition-all flex items-center gap-2"
               >
                 <Music className="w-4 h-4" />
-                Guitar Lessons
+                Book Guitar Lessons
               </a>
             </div>
 
             {/* Stats */}
             <div className="flex gap-10 mt-14 pt-8 border-t border-dark/10">
               <div>
-                <p className="font-manrope font-bold text-3xl text-dark">10+</p>
+                <p className="font-manrope font-bold text-3xl text-dark">15+</p>
                 <p className="font-manrope text-sm text-dark/50 mt-1">Years Experience</p>
               </div>
               <div>
                 <p className="font-manrope font-bold text-3xl text-dark">50+</p>
-                <p className="font-manrope text-sm text-dark/50 mt-1">Productions</p>
+                <p className="font-manrope text-sm text-dark/50 mt-1">Music Projects</p>
               </div>
               <div>
-                <p className="font-manrope font-bold text-3xl text-dark">100+</p>
+                <p className="font-manrope font-bold text-3xl text-dark">20+</p>
                 <p className="font-manrope text-sm text-dark/50 mt-1">Students Taught</p>
               </div>
             </div>
@@ -90,7 +92,7 @@ export default function Hero() {
               {/* Main image */}
               <div className="col-span-2 relative rounded-3xl overflow-hidden aspect-[4/3] group">
                 <img
-                  src="/assets/images/Zemar_Studio_Photo1.jpg"
+                  src="/assets/images/5492C193-3B61-4CD6-8A69-363C7B95FEA0.jpg"
                   alt="Zemar Studio"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -107,14 +109,14 @@ export default function Hero() {
               {/* Small images */}
               <div className="relative rounded-2xl overflow-hidden aspect-square group">
                 <img
-                  src="/assets/images/Zemar_Studio_Photo2.jpg"
+                  src="/assets/images/6D45961A-9DC3-458A-B3FD-7219E0621814.PNG"
                   alt="Studio"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
               </div>
               <div className="relative rounded-2xl overflow-hidden aspect-square group">
                 <img
-                  src="/assets/images/Zemar_Studio_Photo3.jpg"
+                  src="/assets/images/85819A81-B831-49AB-810C-DFADFAD5E0C2.PNG"
                   alt="Studio"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />

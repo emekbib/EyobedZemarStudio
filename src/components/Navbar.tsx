@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Music } from 'lucide-react';
 
 const NAV_LINKS = [
   { label: 'Home', href: '#home' },
@@ -30,8 +30,13 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" className="font-manrope font-bold text-xl tracking-tight text-dark">
-          ZEMAR<span className="text-primary">.</span>STUDIO
+        <a href="#home" className="flex items-center gap-2.5">
+          <div className="w-10 h-10 rounded-xl bg-dark flex items-center justify-center flex-shrink-0">
+            <Music className="w-5 h-5 text-primary" />
+          </div>
+          <span className="font-manrope font-bold text-2xl tracking-tight text-dark">
+            ZEMAR<span className="text-primary">.</span>STUDIO
+          </span>
         </a>
 
         {/* Desktop nav */}
