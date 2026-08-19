@@ -1,6 +1,7 @@
-import { Instagram, Youtube, Mail, Phone, ArrowUp, Music } from 'lucide-react';
+import { Instagram, Youtube, Mail, Phone, ArrowUp, Music } from "lucide-react";
 
 export default function Footer() {
+  // Check Check Mic Check
   return (
     <footer className="bg-cream border-t border-dark/10">
       <div className="max-w-7xl mx-auto px-6 py-16">
@@ -59,11 +60,11 @@ export default function Footer() {
             </p>
             <ul className="space-y-2.5">
               {[
-                { label: 'About', href: '#about' },
-                { label: 'Services', href: '#services' },
-                { label: 'Portfolio', href: '#portfolio' },
-                { label: 'Lessons', href: '#lessons' },
-                { label: 'Contact', href: '#contact' },
+                { label: "About", href: "#about" },
+                { label: "Services", href: "#services" },
+                { label: "Portfolio", href: "#portfolio" },
+                { label: "Lessons", href: "#lessons" },
+                { label: "Contact", href: "#contact" },
               ].map((link) => (
                 <li key={link.href}>
                   <a
@@ -84,7 +85,10 @@ export default function Footer() {
             </p>
             <ul className="space-y-2.5">
               <li>
-                <a href="mailto:eyobedtho@gmail.com" className="font-manrope text-sm text-dark/50 hover:text-primary transition-colors">
+                <a
+                  href="mailto:eyobedtho@gmail.com"
+                  className="font-manrope text-sm text-dark/50 hover:text-primary transition-colors"
+                >
                   eyobedtho@gmail.com
                 </a>
               </li>
