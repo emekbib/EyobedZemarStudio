@@ -32,9 +32,9 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2.5">
           <img
-            src="/assets/images/zemar-music-studio-logo.webp"
+            src="/assets/images/Asset_3.png"
             alt="Zemar Music Studio"
-            className="h-11 w-auto"
+            className="h-12 w-auto"
           />
         </a>
 

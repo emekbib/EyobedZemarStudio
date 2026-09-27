@@ -9,9 +9,9 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <img
-              src="/assets/images/zemar-music-studio-logo.webp"
+              src="/assets/images/Asset_3.png"
               alt="Zemar Music Studio"
-              className="h-14 w-auto mb-4"
+              className="h-16 w-auto mb-4"
             />
             <p className="font-manrope text-dark/50 max-w-sm leading-relaxed">
               Music production and guitar instruction. Helping artists and
