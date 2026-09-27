@@ -44,7 +44,7 @@ export default function Hero() {
             </h1>
 
             <p className="font-manrope text-lg text-dark/60 mt-8 max-w-xl leading-relaxed">
-              Zemar Studio is a creative music production and guitar education
+              Zemar Music Studio is a creative music production and guitar education
               studio helping artists turn ideas into finished music. From
               production and arrangement to recording and mixing, we bring your
               musical vision to life — while helping guitarists develop their
@@ -93,7 +93,7 @@ export default function Hero() {
               <div className="col-span-2 relative rounded-3xl overflow-hidden aspect-[4/3] group">
                 <img
                   src="/assets/images/5492C193-3B61-4CD6-8A69-363C7B95FEA0.jpg"
-                  alt="Zemar Studio"
+                  alt="Zemar Music Studio"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark/40 to-transparent" />

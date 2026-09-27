@@ -1,4 +1,4 @@
-import { Instagram, Youtube, Mail, Phone, ArrowUp, Music } from "lucide-react";
+import { Instagram, Youtube, Mail, Phone, ArrowUp } from "lucide-react";
 
 export default function Footer() {
   // Check Check Mic Check
@@ -8,14 +8,11 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-dark flex items-center justify-center flex-shrink-0">
-                <Music className="w-5 h-5 text-primary" />
-              </div>
-              <h3 className="font-manrope font-bold text-3xl text-dark tracking-tight">
-                ZEMAR<span className="text-primary">.</span>STUDIO
-              </h3>
-            </div>
+            <img
+              src="/assets/images/zemar-music-studio-logo.webp"
+              alt="Zemar Music Studio"
+              className="h-14 w-auto mb-4"
+            />
             <p className="font-manrope text-dark/50 max-w-sm leading-relaxed">
               Music production and guitar instruction. Helping artists and
               students find their sound since 2014.
@@ -107,7 +104,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-12 pt-8 border-t border-dark/10">
           <p className="font-manrope text-xs text-dark/40">
-            © {new Date().getFullYear()} Zemar Studio. All rights reserved.
+            © {new Date().getFullYear()} Zemar Music Studio. All rights reserved.
           </p>
           <a
             href="#home"

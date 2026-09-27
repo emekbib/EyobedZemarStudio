@@ -50,7 +50,7 @@ export default function About() {
             </h2>
             <div className="mt-8 space-y-4">
               <p className="font-manrope text-cream/60 text-lg leading-relaxed">
-                Zemar Studio is a creative music production and education studio
+                Zemar Music Studio is a creative music production and education studio
                 founded by producer, guitarist, and instructor Eyobed Thomas.
               </p>
               <p className="font-manrope text-cream/50 text-base leading-relaxed">
@@ -64,7 +64,7 @@ export default function About() {
               </p>
               <p className="font-manrope text-cream/50 text-base leading-relaxed">
                 Whether you're developing your next song or developing your skills
-                as a musician, Zemar Studio provides the creative environment,
+                as a musician, Zemar Music Studio provides the creative environment,
                 experience, and personal attention to help you move forward.
               </p>
             </div>
