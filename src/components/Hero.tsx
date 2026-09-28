@@ -34,7 +34,7 @@ export default function Hero() {
                 >
                   <path
                     d="M2 9C50 3 150 3 198 9"
-                    stroke="#f49957"
+                    stroke="#0b8d8a"
                     strokeWidth="3"
                     strokeLinecap="round"
                   />

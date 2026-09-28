@@ -4,11 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#f49957',
-        dark: '#100f0f',
-        cream: '#f8f4f2',
-        'light-orange': '#ffddaa',
-        'warm-gray': '#e4ddd6',
+        primary: '#0b8d8a',
+        dark: '#064f4c',
+        cream: '#fffaf0',
+        'light-orange': '#f9e5a5',
+        'warm-gray': '#e6ddd0',
+        coral: '#ff642d',
       },
       fontFamily: {
         manrope: ['Manrope', 'sans-serif'],
